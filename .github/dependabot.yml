@@ -2,10 +2,18 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
     directory: "/.devcontainer"
     schedule:
-      interval: "weekly"
-  - package-ecosystem: "terraform"
-    directory: "/ops/cloud/component"
+      interval: "daily"
+  - package-ecosystem: "pip"
+    directory: "/dev/services/add_account"
     schedule:
-      interval: "weekly"
+      interval: "daily"
+  - package-ecosystem: "pip"
+    directory: "/dev/services/add_email_account"
+    schedule:
+      interval: "daily"

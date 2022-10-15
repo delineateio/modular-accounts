@@ -1,4 +1,3 @@
-[![CircleCI][circleci-url]][circleci-url]
 [![PRs Welcome][pr-welcome-shield]][pr-welcome-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -13,16 +12,14 @@
   <h2 align="center">delineate.io</h2>
   <p align="center">portray or describe (something) precisely.</p>
 
-  <h3 align="center">[PROJECT_TITLE]</h3>
+  <h3 align="center">Modular Accounts</h3>
 
   <p align="center">
-    [PROJECT_DESCRIPTION]
+    This is a project for demonstrating working with Cloud Functions locally
     <br />
     <a href="https://github.com/delineateio/oss-template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/delineateio/oss-template">View Demo</a>
-    ·
     <a href="https://github.com/delineateio/oss-template/issues">Report Bug</a>
     ·
     <a href="https://github.com/delineateio/oss-template/issues">Request Feature</a>
@@ -36,13 +33,7 @@
 
 - [About The Project](#about-the-project)
 - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Local Dependencies](#local-dependencies)
-  - [Local Setup](#local-setup)
 - [Usage](#usage)
-- [Infrastructure](#infrastructure)
-  - [Local Services](#local-services)
-  - [Cloud Infrastructure](#cloud-infrastructure)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -53,10 +44,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The repo description should be added here and describe at least:
+This project using [Python](https://www.python.org/) demonstrates the use of [Function Framework](https://github.com/GoogleCloudPlatform/functions-framework-python) and the [Pub/Sub Emulator](https://cloud.google.com/pubsub/docs/emulator) for developing Google [Cloud Functions](https://cloud.google.com/pubsub/docs/emulator).
 
-* Purpose of the repo e.g. problem/opportunity statement
-* High level description of the overall approach/solution
+In this specific example an HTTP service called [add_account](./dev/services/add_account/) accepts a message, formats some data and echo's back while raise a pub/sub event that is subscribed to by the [add_email_address](./dev/services/add_email_address/) service which simply print this out.
 
 ## Built With
 
@@ -66,60 +56,30 @@ Further logos can be inserted to highlight the specific technologies used to cre
 | --- | ----------- |
 | ![pre-commit](https://img.shields.io/badge/precommit-%235835CC.svg?style=for-the-badge&logo=precommit&logoColor=white) | Pre-commit `git` hooks that perform checks before pushes|
 | ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) | Source control management platform  |
-| ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) | Containerise applications and provide local environment |
-| ![CircleCI](https://img.shields.io/badge/CIRCLECI-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white) | CI/CD pipeline and services |
-| ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white) | Cloud infrastructure provisioning configuration|
-| ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white) | Security and DNS services for internet services|
-| ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) | Hosting of services on Google Cloud |
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Local Dependencies
-
-A number of local dependencies are required.  To review the local dependencies run `task dependencies:list`.  If new local dependencies then they should be added to the correct Taskfile in `./os` e.g. `taskfile.darwin.yaml`.
-
-> Note that currently only `macOS` is configured and a PR should be submitted if either `Linux` or `Windows` are required.
-
-### Local Setup
-
-This repo follows the principle of minimal manual setup of the local development environment.
-
- A `task` target has been provided for simplicity ```task init```, the `taskfile.yaml` file can be inspected for more details.
+| ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) | Implementation of the HTTP and Pub/Sub services
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+After the [devcontainer](https://containers.dev/) starts the following demonstrates the golden path follow of running the cloud functions and testing them.
 
-_For more examples, please refer to the [Documentation](https://example.com)._
-
-## Infrastructure
-
-### Local Services
-
-A boilerplate `docker-compose` file is provided that can be used to manage local environment services.  The stack can be found at `ops/local/stack.yaml`.
+In addition these services can be debugged is VSCode using the provided launches for debugging.
 
 ```shell
-# stands up the local services
-task local:up
+# starts the emulator
+task pubsub:start
 
-# tears down the local services
-task local:down
-```
+# starts the two services
+task services:up
 
-### Cloud Infrastructure
+# makes a request to the HTTP end point
+http POST :8080 'Content-Type: application/json' \
+            short_name="Worldpay" \
+            full_name="FIS Worldpay" \
+            code="wpay"
 
-A boilerplate configuration is provided for using `terraform` configuration to provision cloud infrastructure.  [tfenv](https://github.com/tfutils/tfenv) is used to select the version of `terraform` to use.  The repo template provides a single component in `ops/cloud/component`.
-
-```shell
-# plans the network terraform config
-task cloud:plan LAYER=component
-
-# auto approves applying the network terraform config
-task cloud:apply LAYER=component
+# stops the two services
+task services:down
 ```
 
 <!-- ROADMAP -->
@@ -158,7 +118,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[circleci-url]: https://img.shields.io/circleci/build/gh/delineateio/oss-template?style=for-the-badge&logo=circleci
 [pr-welcome-shield]: https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=for-the-badge&logo=github
 [pr-welcome-url]: https://github.com/delineateio/oss-template/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue
 [contributors-shield]: https://img.shields.io/github/contributors/delineateio/oss-template.svg?style=for-the-badge&logo=github
