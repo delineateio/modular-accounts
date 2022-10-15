@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "add_account",
+            "type": "python",
+            "request": "launch",
+            "module": "functions_framework",
+            "args" : [
+              "--target=main",
+              "--port=8080",
+              "--debug"
+            ],
+            "cwd": "${workspaceFolder}/dev/services/add_account"
+        },
+        {
+          "name": "add_email_address",
+          "type": "python",
+          "request": "launch",
+          "module": "functions_framework",
+          "args" : [
+            "--target=subscribe",
+            "--signature-type=event",
+            "--port=8081",
+            "--debug"
+          ],
+          "cwd": "${workspaceFolder}/dev/services/add_email_address"
+      }
+  ]
+}

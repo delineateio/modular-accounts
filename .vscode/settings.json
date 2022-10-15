@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "Autobuild",
+        "autodocstring",
+        "autopep",
         "autoupdate",
         "azuretools",
         "Brewfile",
@@ -8,14 +10,26 @@
         "cmds",
         "codeql",
         "deps",
+        "devcontainer",
+        "devcontainers",
         "doctoc",
+        "fuser",
+        "gapic",
+        "ggshield",
+        "gitguardian",
         "gomod",
         "gopath",
         "goroot",
         "gruntfuggly",
         "markdownlint",
+        "mypy",
+        "njpwerner",
         "PTRACE",
+        "pycodestyle",
+        "pydocstyle",
         "pyenv",
+        "pylance",
+        "pylint",
         "seccomp",
         "Taskfile",
         "tfenv",
@@ -24,6 +38,12 @@
         "treetsidesoftware",
         "tyriar",
         "venv",
-        "virtualenv"
+        "virtualenv",
+        "Worldpay",
+        "wpay",
+        "yapf"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/vscode/.local/lib/python3.10/site-packages"
     ]
 }

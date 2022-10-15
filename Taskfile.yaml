@@ -1,30 +1,42 @@
 version: 3
 
-includes:
-  cloud: ./ops/taskfile.cloud.yaml
-  local: ./ops/taskfile.local.yaml
-
 tasks:
   init:
     desc: initialise local environment
-    cmds:
-      - task: terraform:pin
-      - task: pre-commit:init
-      - task: todo
-
-  terraform:pin:
-    desc: pins required version of terraform
     silent: true
     cmds:
-      - tfenv pin
+      - task: pre-commit:init
 
   pre-commit:init:
     desc: initialises pre-commit hooks
     silent: true
     cmds:
-      - pre-commit install
+      - pre-commit install &>/dev/null &
 
-  todo:
+  pubsub:start:
     desc: show to do list to
+    silent: true
     cmds:
-      - cat ./.todo
+      - cmd: fuser -k 8085/tcp
+        ignore_error: true
+      - gcloud beta emulators pubsub start --project delineateio --host-port localhost:8085 &>/dev/null &
+      - python dev/services/setup.py
+
+  services:up:
+    desc: starts all the services locally
+    silent: true
+    cmds:
+      - cd $(pwd)/dev/services/add_account; functions_framework --target=main --port=8080 &>/dev/null &
+      - cd -
+      - cd $(pwd)/dev/services/add_email_address; functions_framework --target=subscribe --signature-type=event --port=8081 &>/dev/null &
+      - echo "All services are up!"
+
+  services:down:
+    desc: stops all the services locally
+    silent: true
+    cmds:
+      - cmd: fuser -k 8080/tcp
+        ignore_error: true
+      - cmd: fuser -k 8081/tcp
+        ignore_error: true
+      - echo "All services are down!"
