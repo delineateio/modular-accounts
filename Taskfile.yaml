@@ -6,19 +6,12 @@ tasks:
     silent: true
     cmds:
       - task: pre-commit:init
-      - task: todo
 
   pre-commit:init:
     desc: initialises pre-commit hooks
     silent: true
     cmds:
       - pre-commit install &>/dev/null &
-
-  todo:
-    desc: show to do list to
-    silent: true
-    cmds:
-      - cat ./.todo
 
   pubsub:start:
     desc: show to do list to
