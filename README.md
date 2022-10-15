@@ -17,12 +17,12 @@
   <p align="center">
     This is a project for demonstrating working with Cloud Functions locally
     <br />
-    <a href="https://github.com/delineateio/oss-template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/delineateio/local-cloud-functions-example"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/delineateio/oss-template/issues">Report Bug</a>
+    <a href="https://github.com/delineateio/local-cloud-functions-example/issues">Report Bug</a>
     ·
-    <a href="https://github.com/delineateio/oss-template/issues">Request Feature</a>
+    <a href="https://github.com/delineateio/local-cloud-functions-example/issues">Request Feature</a>
   </p>
 </p>
 
@@ -85,7 +85,7 @@ task services:down
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/delineateio/oss-template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/delineateio/local-cloud-functions-example/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -119,14 +119,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [pr-welcome-shield]: https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=for-the-badge&logo=github
-[pr-welcome-url]: https://github.com/delineateio/oss-template/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue
-[contributors-shield]: https://img.shields.io/github/contributors/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[contributors-url]: https://github.com/delineateio/oss-template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[forks-url]: https://github.com/delineateio/oss-template/network/members
-[stars-shield]: https://img.shields.io/github/stars/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[stars-url]: https://github.com/delineateio/oss-template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[issues-url]: https://github.com/delineateio/oss-template/issues
-[license-shield]: https://img.shields.io/github/license/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[license-url]: https://github.com/delineateio/oss-template/blob/master/LICENSE
+[pr-welcome-url]: https://github.com/delineateio/local-cloud-functions-example/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue
+[contributors-shield]: https://img.shields.io/github/contributors/delineateio/local-cloud-functions-example.svg?style=for-the-badge&logo=github
+[contributors-url]: https://github.com/delineateio/local-cloud-functions-example/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/delineateio/local-cloud-functions-example.svg?style=for-the-badge&logo=github
+[forks-url]: https://github.com/delineateio/local-cloud-functions-example/network/members
+[stars-shield]: https://img.shields.io/github/stars/delineateio/local-cloud-functions-example.svg?style=for-the-badge&logo=github
+[stars-url]: https://github.com/delineateio/local-cloud-functions-example/stargazers
+[issues-shield]: https://img.shields.io/github/issues/delineateio/local-cloud-functions-example.svg?style=for-the-badge&logo=github
+[issues-url]: https://github.com/delineateio/local-cloud-functions-example/issues
+[license-shield]: https://img.shields.io/github/license/delineateio/local-cloud-functions-example.svg?style=for-the-badge&logo=github
+[license-url]: https://github.com/delineateio/local-cloud-functions-example/blob/master/LICENSE
