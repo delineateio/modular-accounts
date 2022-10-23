@@ -74,9 +74,9 @@ task services:up
 
 # makes a request to the HTTP end point
 http POST :8080 'Content-Type: application/json' \
-            short_name="Worldpay" \
-            full_name="FIS Worldpay" \
-            code="wpay"
+            short_name="Disney" \
+            full_name="The Walt Disney Company" \
+            code="disn"
 
 # stops the two services
 task services:down
