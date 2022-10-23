@@ -12,6 +12,7 @@
         "deps",
         "devcontainer",
         "devcontainers",
+        "disn",
         "doctoc",
         "fuser",
         "gapic",
@@ -39,7 +40,6 @@
         "tyriar",
         "venv",
         "virtualenv",
-        "Worldpay",
         "wpay",
         "yapf"
     ],
