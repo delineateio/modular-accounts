@@ -4,4 +4,4 @@ functions-framework >= 3.2.0,<4.0.0
 ggshield>=1.13.5, <2.0.0
 google-cloud-pubsub == 2.13.11
 httpie >= 3.2.1,<4.0.0
-pre-commit>=2.20.0,<3.0.0
+pre-commit>=2.20.0,<4.0.0
