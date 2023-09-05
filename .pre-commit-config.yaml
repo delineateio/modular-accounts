@@ -4,7 +4,7 @@ ci:
 repos:
 
 - repo: https://github.com/igorshubovych/markdownlint-cli
-  rev: v0.35.0
+  rev: v0.36.0
   hooks:
     - id: markdownlint
       name: markdown linting
@@ -37,7 +37,7 @@ repos:
     - id: fix-encoding-pragma
       name: fix encoding pragma
 
--   repo: https://github.com/pre-commit/mirrors-autopep8
+-   repo: https://github.com/hhatto/autopep8
     rev: v2.0.4
     hooks:
     -   id: autopep8
