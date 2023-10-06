@@ -1,2 +1,2 @@
 functions-framework==3.4.0
-bleach==6.0.0
+bleach==6.1.0
