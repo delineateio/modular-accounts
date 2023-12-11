@@ -2,6 +2,6 @@ detect-secrets>=1.3.0,<2.0.0
 bleach >= 5.0.1,< 7.0.0
 functions-framework >= 3.2.0,<4.0.0
 ggshield>=1.13.5, <2.0.0
-google-cloud-pubsub == 2.18.4
+google-cloud-pubsub == 2.19.0
 httpie >= 3.2.1,<4.0.0
 pre-commit>=2.20.0,<4.0.0
